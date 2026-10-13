@@ -1,0 +1,2 @@
+agents: {codex: {fit: [review]}, kimi: {fit: [write, review]}}
+notes: 项目级覆盖，只改 fit

@@ -1,0 +1,21 @@
+# aic agents 配置（解析器测试夹具）
+# 覆盖：流式列表、块式列表、行内注释、引号里的 # 与冒号、额外未知键
+host:
+  command: [dsh, --profile, headless]
+  model: deepseek-v4
+
+agents:
+  codex:
+    command:
+      - codex
+      - exec
+      - --json
+    fit: [write, review]
+    model: gpt-5-codex
+  opencode:
+    command: [opencode, run, --format, json]
+    fit: [write]
+  kimi:
+    command: [kimi, -p, "--output-format", stream-json]
+    fit: [review, integrate]
+    note: "带冒号的说明: 引号里的 # 不是注释"

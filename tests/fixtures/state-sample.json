@@ -1,0 +1,41 @@
+{
+  "id": "abcd1234",
+  "task_count": 2,
+  "goal": "给订单模块加导出功能",
+  "status": "running",
+  "integration_branch": "aic/run/abcd1234",
+  "started_at": "2026-09-22T16:01:02",
+  "updated_at": "2026-09-22T16:05:00",
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "实现导出接口",
+      "kind": "write",
+      "status": "running",
+      "agent": "codex",
+      "paths": ["src/order/export.ts", "src/order/routes.ts"],
+      "depends": [],
+      "acceptance": ["npm test -- export"],
+      "summary": "",
+      "blocked": "",
+      "branch": "aic/abcd1234/T1",
+      "worktree": "C:\\Users\\user\\.aic\\runs\\abcd1234\\worktrees\\T1",
+      "stall_since": null,
+      "started_at": "2026-09-22T16:01:10"
+    },
+    {
+      "id": "T2",
+      "title": "审查导出实现",
+      "kind": "review",
+      "status": "blocked",
+      "agent": "kimi",
+      "paths": [],
+      "depends": ["T1"],
+      "summary": "等待 T1 结束",
+      "blocked": "依赖 T1 未完成",
+      "note": "\u4e2d\u6587\u8f6c\u4e49\u6d4b\u8bd5"
+    }
+  ],
+  "delta": ["任务完成: T0", "进程失败: T3"],
+  "human": {"pending_question": "导出格式用 CSV 还是 XLSX？", "task_id": "T2"}
+}
